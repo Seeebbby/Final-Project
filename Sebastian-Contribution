@@ -1,17 +1,17 @@
 global inp
-global index	- global inp and index for later use.
-record = []       - this is a empty list                 
+global index	
+record = []                  
                 
-def new_student():		- function new_student
-  while True:          - uses while loop       
-    if len(record) > 20 :   					- checking if record reached it limits	                                     
+def new_student():	
+  while True:             
+    if len(record) > 20 :   					                                    
       print("Student data limit exceeded!!")
       return
     data = [] 	- empty list named data
     try:  
       name = input("ENTER STUDENT NAME : ")
-      reg_no = (input("ENTER STUDENT SR- CODE: ")		- user inputs for student information needed, uses try exception for age if the inputs are invalid it'll show										
-      age = int(input("ENTER STUDENT AGE: "))				" you must input integer value "
+      reg_no = (input("ENTER STUDENT SR- CODE: ")												
+      age = int(input("ENTER STUDENT AGE: "))				
       major = input("ENTER STUDENT MAJOR: ")
       email = input("ENTER STUDENT E-MAIL ID: ")
       address = input ("ENTER STUDENT ADDRESS: ")
@@ -21,11 +21,11 @@ def new_student():		- function new_student
     else:
       data.append(name)
       data.append(reg_no)
-      data.append(age)				- appending or adding the information that user inputs into the data
+      data.append(age)				
       data.append(major)
       data.append(email)
       data.append(address)
-      record.append(data)                 - after the user inputs the required information, it'll add the data list inside the record list.                         
+      record.append(data)                                       
       print("--------------------------")
       print("Student Data Inserted successfully")
       print("--------------------------")
@@ -70,9 +70,44 @@ def update_student():
     print("----------------------")
 
 
-def delete_student():                - function for deleting student named delete_student                                  
+def delete_student():                                                 
   del_index = input("Enter index(From 0) to Delete student record: ")
-  del record[int(del_index)]      - deleting the data inside a record list.                                          
+  del record[int(del_index)]                                              
   print("----------------------")
   print("Student Data Deleted successfully")
   print("----------------------") 
+
+while True:  
+                                
+  print("PRESS 1 : TO ADD STUDENT INFORMATION.")
+  
+  if len(record) >= 1:                                          
+   print("PRESS 2 : TO DELETE STUDENT INFORMATION.")
+  										
+  if len(record) >= 1:
+   print("PRESS 3 : TO UPDATE STUDENT INFORMATION.")
+
+  if len(record) >= 1: 
+   print("PRESS 4 : TO DISPLAY STUDENT INFORMATION.")
+
+  if len(record) >= 1:
+   print("PRESS 5 : TO EXIT SYSTEM.")
+
+  
+  inp = input("ENTER YOUR OPTION: ")                           
+
+  if int(inp) == 1:
+    new_student()                              
+ 
+  elif int(inp) == 2 and len(record) >= 1 :
+    delete_student()                           
+    								
+  elif int(inp) == 3 and len(record) >= 1:
+    update_student()                          
+    
+  elif int(inp) == 4 and len(record) >= 1:
+    display_student()                          
+  
+  else:
+    print("Invalid input!")
+  continue
