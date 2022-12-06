@@ -7,7 +7,7 @@ def new_student():
     if len(record) > 20 :   					                                    
       print("Student data limit exceeded!!")
       return
-    data = [] 	- empty list named data
+    data = [] 	
     try:  
       name = input("ENTER STUDENT NAME : ")
       reg_no = (input("ENTER STUDENT SR- CODE: ")												
